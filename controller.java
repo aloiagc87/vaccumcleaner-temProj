@@ -1,5 +1,12 @@
 package student;
-
+//
+//Gregory Aloia
+//COS 472
+//Final Project
+//
+//
+//THis is a vaccum cleaner world simulation
+//Itelligent agent gets user input to build rooms and then rooms are cleaned with optimal path printed
 import java.util.Random;
 import java.util.Scanner;
 
@@ -62,14 +69,33 @@ for(int i=0; i<dirtyRooms;i++) {
     
     while(hitsKey)
     {
-        System.out.println("Awesome.....Heres what the grid looks like(An 1 indicates a dirty room)...");
+        System.out.println("Awesome.....Heres what the grid looks like(An 1 indicates a dirty room)...\n");
         hitsKey=false;
     }
+    System.out.print("\t");
+    for(int i=1;i<=columns;i++) {
+        
+            System.out.print(i+ "\t");
+        }
+    System.out.println();
+    
+    for(int i=0;i<=(columns*1.5)*rows-(columns/2);i++) {
+        
+        System.out.print("-");
+    }
+    System.out.println();
+   
+        
+    
+    int num =1;
     userInput.nextLine();
     for(int i=0;i<board.length;i++) {
+        System.out.print(num+"|"+"\t");
+        num++;
         for(int j = 0;j<board[i].length;j++) {
             System.out.print(board[i][j]+ "\t");
         }
+        
         System.out.println();
     }
     System.out.println("Here are the settings for this problem: \n"
@@ -111,14 +137,32 @@ if(userInput.hasNext()) {
             downMoves=0;
             rightMoves=0;
             System.out.println("There are "+dirtyRooms+" dirty rooms left. This is what the grid looks like now:\n ");
+            
+            
+            System.out.print("\t");
+            for(int p=1;p<=columns;p++) {
+                
+                    System.out.print(p+ "\t");
+                }
+            System.out.println();
+            
+            for(int q=0;q<=(columns*1.5)*rows-(columns/2);q++) {
+                
+                System.out.print("-");
+            }
+            System.out.println();
+           
+            num=1;
             for(int g=0;g<board.length;g++) {
+                System.out.print(num+"|"+"\t");
+                num++;
                 for(int m = 0;m<board[g].length;m++) {
                     System.out.print(board[g][m]+ "\t");
                 }
                 System.out.println();
             }
             userInput.nextLine();
-            System.out.println("Press any key to continue.");
+            System.out.println("\nPress any key to continue.");
            
         }
             
@@ -156,14 +200,34 @@ if(userInput.hasNext()) {
                 dirtyRooms--;
                 System.out.println("There are "+dirtyRooms+" dirty rooms left.");
                 System.out.println("This is what things look like now: \n");
+                
+                System.out.print("\t");
+                for(int p=1;p<=columns;p++) {
+                    
+                        System.out.print(p+ "\t");
+                    }
+                System.out.println();
+                
+                for(int q=0;q<=(columns*1.5)*rows-(columns/2);q++) {
+                    
+                    System.out.print("-");
+                }
+                System.out.println();
+               
+                num=1;
+                
+                
+                
                 for(int g=0;g<board.length;g++) {
+                    System.out.print(num+"|"+"\t");
+                    num++;
                     for(int m = 0;m<board[g].length;m++) {
                         System.out.print(board[g][m]+ "\t");
                     }
                     System.out.println();
                 }
                 
-                System.out.println("Press any key to continue."); 
+                System.out.println("\nPress any key to continue."); 
                  keepcleaning = userInput.nextLine();
                  userInput.next();
               
